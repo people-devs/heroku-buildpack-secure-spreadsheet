@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Fail script on any error
+set -e
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+echo "-----> Installing secure-spreadsheet"
+
+# Ensure Node.js is installed and in PATH.
+# This is a simplified example. In practice, you might need to install Node.js here if it's not available.
+export PATH="$BUILD_DIR/.heroku/node/bin:$PATH"
+
+# Install secure-spreadsheet globally
+npm install -g secure-spreadsheet
+
+echo "       secure-spreadsheet installation done"
